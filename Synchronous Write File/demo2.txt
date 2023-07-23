@@ -1,0 +1,1 @@
+This is from synchronous.js file
