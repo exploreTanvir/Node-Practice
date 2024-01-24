@@ -3,15 +3,15 @@ const http=require("http")
 const url=require("url")
 const server=http.createServer((req,res)=>{
     if(req.url==="/"){
-        fs.writeFile("../pages/public.txt","Hello world",(err)=>{
+        fs.exists("demo.txt",(err)=>{
             if(err){
                 res.writeHead(404,{"content-type":"text/html"})
-                res.write("file write failed")
+                res.write("file exists success")
                 res.end()
             }
             else{
                 res.writeHead(200,{"content-type":"text/html"})
-                res.write("file write success")
+                res.write("file exists failed")
                 res.end()
             }
         })
